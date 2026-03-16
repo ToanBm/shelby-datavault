@@ -51,7 +51,10 @@ function patchFetchForShelby(origin: string) {
 export function getShelbyClient(): ShelbyNodeClient {
   if (!_shelbyClient) {
     const shelbyApiKey = process.env.SHELBY_API_KEY;
-    const origin = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+    // VERCEL_URL is set automatically by Vercel (no https:// prefix).
+    // NEXT_PUBLIC_APP_URL takes priority so you can override it explicitly.
+    const vercelUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null;
+    const origin = process.env.NEXT_PUBLIC_APP_URL ?? vercelUrl ?? "http://localhost:3000";
 
     patchFetchForShelby(origin);
 
