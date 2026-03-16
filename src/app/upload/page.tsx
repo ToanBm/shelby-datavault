@@ -203,7 +203,7 @@ export default function UploadPage() {
     try {
       setStep("uploading");
       setStatusMsg("Uploading dataset to Shelby storage…");
-      setStatusDetail("Server is encoding and registering your file on Shelbynet. This may take a moment.");
+      setStatusDetail("Server is encoding and registering your file on Shelby Testnet. This may take a moment.");
 
       const form = new FormData();
       form.append("file", file);

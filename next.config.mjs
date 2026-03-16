@@ -8,6 +8,18 @@ const withPWA = withPWAInit({
 export default withPWA({
   // output: export removed — project uses server-side API routes for Shelby integration.
 
+  // Prevent webpack from bundling the Shelby SDK on the server side.
+  // clay.wasm is loaded via `new URL("./clay.wasm", import.meta.url)` inside
+  // @shelby-protocol/clay-codes. When webpack bundles it, the .wasm file is
+  // not included in the serverless function output, causing WASM init to fail
+  // on Vercel. Marking it external lets Node.js load it natively from node_modules.
+  experimental: {
+    serverComponentsExternalPackages: [
+      "@shelby-protocol/sdk",
+      "@shelby-protocol/clay-codes",
+    ],
+  },
+
   webpack(config) {
     // Required for @shelby-protocol/clay-codes which loads clay.wasm via
     // `new URL("./clay.wasm", import.meta.url)`. Without asyncWebAssembly,
