@@ -18,6 +18,13 @@ export default withPWA({
       "@shelby-protocol/sdk",
       "@shelby-protocol/clay-codes",
     ],
+    // Vercel's file tracer doesn't automatically follow .wasm references.
+    // Explicitly include clay.wasm so it's bundled into the upload serverless function.
+    outputFileTracingIncludes: {
+      "/api/datasets/upload": [
+        "./node_modules/@shelby-protocol/clay-codes/dist/*.wasm",
+      ],
+    },
   },
 
   webpack(config) {
