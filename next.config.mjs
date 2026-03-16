@@ -6,9 +6,7 @@ const withPWA = withPWAInit({
 
 // Your Next config is automatically typed!
 export default withPWA({
-  // Removed "output: export" — project uses server-side API routes for Shelby integration.
-  distDir: "./dist",
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  // output: export removed — project uses server-side API routes for Shelby integration.
 
   webpack(config) {
     // Required for @shelby-protocol/clay-codes which loads clay.wasm via

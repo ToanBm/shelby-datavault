@@ -23,8 +23,8 @@ A decentralized marketplace for AI training datasets built on **Aptos** (smart c
 | Field | Value |
 |---|---|
 | Network | Aptos Testnet (staging) |
-| Module address | `0x615218f85ebb9f7fbe085d34cf2dfc14beb21b33b7df0d048f556de00a6f4b50` |
-| Deploy tx | `0xf194495b20ebc8a53c3c44f38a07f1f8e26fd3cc9616a2e23aa35edb67c742d7` |
+| Module address | `0x7c897bf8eeac967ec590c57c5ab4464f683def2a7bd088e42a889631d079e84f` |
+| Deploy tx | `0x643d85420052a40e18865940a286d12ae9e13c75401e621e1b8177e7795b7ea1` |
 | Node URL | `https://api.testnet.staging.aptoslabs.com/v1` |
 
 ## Project Structure
