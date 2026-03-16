@@ -1,0 +1,6 @@
+review_id,product_id,product_category,rating,verified_purchase,helpful_votes,total_votes,review_date,review_title,review_text
+R000001,B07X6C9RMF,Electronics,5,true,142,156,2024-01-15,"Best wireless earbuds I've owned","Absolutely fantastic product. Battery life exceeded my expectations at nearly 8 hours. The noise cancellation is impressive for the price point. Highly recommend."
+R000002,B08N5WRWNW,Electronics,2,true,34,41,2024-01-16,"Disappointing build quality","The sound quality is decent but the left earbud stopped working after two weeks. Customer support was unhelpful. Would not repurchase."
+R000003,B09G9FPHY6,Home & Kitchen,4,false,89,97,2024-01-17,"Great coffee maker, minor gripe","Makes excellent coffee and heats up quickly. Only complaint is the water reservoir is a bit awkward to fill. Otherwise a solid purchase."
+R000004,B07FZ8S74R,Books,5,true,203,210,2024-01-18,"Changed how I think about systems","One of the most impactful books I have read in years. Dense but rewarding. The author's explanations of complex systems are remarkably clear."
+R000005,B09DFCB8JH,Clothing,3,true,12,19,2024-01-19,"Runs small, decent quality","The material feels premium but sizing is off — order one size up. Color matches the photos accurately. Returned for exchange."

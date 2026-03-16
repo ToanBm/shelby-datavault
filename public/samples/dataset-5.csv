@@ -1,0 +1,6 @@
+id,text,language,language_code,source,label,confidence,annotator_1,annotator_2,annotator_3
+S0001,"I absolutely love this new phone, the camera is incredible!",English,en,product_review,positive,0.97,positive,positive,positive
+S0002,"Das Produkt ist völlig nutzlos und hat mich sehr enttäuscht.",German,de,product_review,negative,0.94,negative,negative,negative
+S0003,"Cette application est correcte mais pourrait être améliorée.",French,fr,social_media,neutral,0.88,neutral,neutral,positive
+S0004,"Este restaurante tiene la mejor comida que he probado en años.",Spanish,es,product_review,positive,0.96,positive,positive,positive
+S0005,"この映画は期待外れでした。ストーリーが単調すぎます。",Japanese,ja,social_media,negative,0.91,negative,negative,neutral

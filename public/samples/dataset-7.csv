@@ -1,0 +1,6 @@
+file_id,speaker_id,accent,region,country,duration_s,sample_rate_hz,transcript,word_count,audio_path
+AUDIO_0001,SPK_1042,General American,US Midwest,US,4.21,48000,"The quick brown fox jumps over the lazy dog",9,audio/AUDIO_0001.flac
+AUDIO_0002,SPK_0387,Southern American,US Southeast,US,3.88,48000,"Y'all come back now, you hear?",6,audio/AUDIO_0002.flac
+AUDIO_0003,SPK_2104,Received Pronunciation,England South,GB,5.14,48000,"How much wood would a woodchuck chuck if a woodchuck could chuck wood",13,audio/AUDIO_0003.flac
+AUDIO_0004,SPK_0891,Australian,New South Wales,AU,4.67,48000,"G'day mate, lovely weather we're having today isn't it",9,audio/AUDIO_0004.flac
+AUDIO_0005,SPK_1738,Indian English,Maharashtra,IN,3.92,48000,"Please kindly revert at your earliest convenience",7,audio/AUDIO_0005.flac

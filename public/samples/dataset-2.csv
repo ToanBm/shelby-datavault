@@ -1,0 +1,6 @@
+patient_id,modality,anatomy,diagnosis_label,annotator_id,annotation_confidence,file_path
+P0001,X-Ray,Chest,Normal,RAD-004,0.97,scans/P0001_chest_xray.dcm
+P0002,MRI,Brain,Glioblastoma,RAD-011,0.91,scans/P0002_brain_mri.dcm
+P0003,CT,Abdomen,Hepatocellular_Carcinoma,RAD-004,0.88,scans/P0003_abdomen_ct.dcm
+P0004,X-Ray,Chest,Pneumonia,RAD-007,0.95,scans/P0004_chest_xray.dcm
+P0005,MRI,Spine,Herniated_Disc,RAD-011,0.93,scans/P0005_spine_mri.dcm

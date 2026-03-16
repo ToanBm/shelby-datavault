@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens ──────────────────────────────────────────────────────── */
+:root {
+  /* ── Archive palette (hex — used directly in inline styles) ── */
+  --parchment:       #f4efe6;
+  --parchment-card:  #faf7f2;
+  --parchment-deep:  #e8e0d0;
+  --ink:             #1a1209;
+  --ink-mid:         #3d3226;
+  --ink-light:       #6b5c4e;
+  --ink-faint:       #a8957f;
+  /* Renamed to avoid shadcn collision: --terra = terracotta, --stroke = border line */
+  --terra:           #c0390a;
+  --terra-dim:       rgba(192, 57, 10, 0.1);
+  --accent-blue:     #1d4470;
+  --accent-blue-dim: rgba(29, 68, 112, 0.1);
+  --accent-green:    #25623a;
+  --stroke:          #cbbfad;
+  --stroke-light:    #ddd5c8;
+
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+  --font-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+  /* ── shadcn/ui tokens (HSL channel values — no hsl() wrapper) ──
+     Tailwind resolves these as hsl(var(--x)), so they MUST be HSL.
+     These are separate from our hex palette above.               */
+  --background:             38 38% 93%;   /* ≈ parchment        #f4efe6 */
+  --foreground:             30 50%  8%;   /* ≈ ink              #1a1209 */
+  --card:                   38 40% 97%;   /* ≈ parchment-card   #faf7f2 */
+  --card-foreground:        30 50%  8%;
+  --popover:                38 40% 97%;
+  --popover-foreground:     30 50%  8%;
+  --primary:                30 50%  8%;   /* ink — button background    */
+  --primary-foreground:     38 40% 97%;   /* parchment-card             */
+  --secondary:              38 25% 86%;   /* parchment-deep   #e8e0d0   */
+  --secondary-foreground:   30 25% 20%;   /* ink-mid          #3d3226   */
+  --secondary-text:         25 17% 36%;   /* ink-light                  */
+  --muted:                  38 25% 86%;
+  --muted-foreground:       25 17% 36%;   /* ink-light        #6b5c4e   */
+  --accent:                 38 25% 86%;   /* hover bg in menus          */
+  --accent-foreground:      30 50%  8%;
+  --destructive:            16 85% 40%;   /* terracotta       #c0390a   */
+  --destructive-foreground: 38 40% 97%;
+  --border:                 35 20% 74%;   /* ≈ stroke         #cbbfad   */
+  --input:                  35 20% 74%;
+  --ring:                   16 85% 40%;   /* terracotta focus ring      */
+  --radius:                 0.125rem;
+}
+
+/* ── Reset ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+/* ── Base ───────────────────────────────────────────────────────────────── */
+html, body {
+  background-color: var(--parchment);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+body {
+  background-image:
+    radial-gradient(ellipse 70% 50% at 8%  35%, rgba(192,57,10,0.05)  0%, transparent 65%),
+    radial-gradient(ellipse 55% 65% at 92% 15%, rgba(29,68,112,0.04)  0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 55% 88%, rgba(192,57,10,0.03)  0%, transparent 60%);
+}
+
+/* Paper grain */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 9998;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+input, textarea, select { font-family: var(--font-body); }
+
+/* ── Catalog card ───────────────────────────────────────────────────────── */
+.catalog-card {
+  background: var(--parchment-card);
+  border: 1px solid var(--stroke);
+  border-radius: 2px;
+  box-shadow: 2px 2px 0 rgba(28,18,9,0.04), 0 4px 16px rgba(28,18,9,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  position: relative; overflow: hidden;
+}
+.catalog-card::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--terra);
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.18s ease;
+}
+.catalog-card:hover {
+  transform: translateY(-4px) rotate(0.2deg);
+  box-shadow: 4px 6px 0 rgba(28,18,9,0.05), 0 18px 36px rgba(28,18,9,0.1);
+  border-color: var(--terra);
+}
+.catalog-card:hover::before { transform: scaleY(1); }
+
+/* ── Surface panels ─────────────────────────────────────────────────────── */
+.surface {
+  background: var(--parchment-card);
+  border: 1px solid var(--stroke);
+  border-radius: 2px;
+}
+
+/* ── Field inputs ───────────────────────────────────────────────────────── */
+.field-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--stroke);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  padding: 0.5rem 0;
+  transition: border-color 0.15s ease;
+  border-radius: 0;
+  appearance: none;
+}
+.field-input:focus { outline: none; border-bottom-color: var(--terra); }
+.field-input::placeholder { color: var(--ink-faint); font-style: italic; }
+
+textarea.field-input {
+  border: 1px solid var(--stroke);
+  border-radius: 2px;
+  padding: 0.625rem 0.75rem;
+  resize: vertical; line-height: 1.65;
+}
+textarea.field-input:focus { border-color: var(--terra); }
+
+select.field-input {
+  border: 1px solid var(--stroke);
+  border-radius: 2px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+select.field-input:focus { border-color: var(--terra); }
+
+/* ── Animations ─────────────────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.animate-fade-up { animation: fade-up 0.45s ease forwards; opacity: 0; }
+.stagger-1  { animation-delay: 0.04s; }
+.stagger-2  { animation-delay: 0.08s; }
+.stagger-3  { animation-delay: 0.12s; }
+.stagger-4  { animation-delay: 0.16s; }
+.stagger-5  { animation-delay: 0.20s; }
+.stagger-6  { animation-delay: 0.24s; }
+.stagger-7  { animation-delay: 0.28s; }
+.stagger-8  { animation-delay: 0.32s; }
+.stagger-9  { animation-delay: 0.36s; }
+.stagger-10 { animation-delay: 0.40s; }
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--parchment-deep); }
+::-webkit-scrollbar-thumb { background: var(--stroke); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-faint); }
+
+/* ── Wallet dialog overrides ─────────────────────────────────────────────── */
+/* Align shadcn Dialog/DropdownMenu with the archive aesthetic              */
+[role="dialog"] [data-radix-dialog-title],
+[role="dialog"] .text-lg {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+[role="dialog"] {
+  font-family: var(--font-body);
+}
+[data-radix-popper-content-wrapper] {
+  font-family: var(--font-body);
+}
+/* Border for wallet rows */
+[role="dialog"] .border {
+  border-color: var(--stroke) !important;
+}
+
+/* ── Card description clamp ──────────────────────────────────────────────── */
+.card-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

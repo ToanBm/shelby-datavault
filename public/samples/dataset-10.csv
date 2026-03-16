@@ -1,0 +1,6 @@
+clip_id,video_source,youtube_id,action_class,action_class_id,start_frame,end_frame,fps,duration_s,confidence,split
+VID_000001,youtube_8m_v3,dQw4w9WgXcQ,abseiling,0,0,90,30,3.0,0.98,train
+VID_000002,youtube_8m_v3,kJQP7kiw5Fk,air_drumming,1,45,135,30,3.0,0.95,train
+VID_000003,youtube_8m_v3,3JZ_D3ELwOQ,answering_questions,2,120,210,30,3.0,0.87,validation
+VID_000004,youtube_8m_v3,9bZkp7q19f0,archery,3,0,75,25,3.0,0.99,train
+VID_000005,youtube_8m_v3,JGwWNGJdvx8,arranging_flowers,4,30,120,30,3.0,0.93,test

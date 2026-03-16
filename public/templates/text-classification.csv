@@ -1,0 +1,16 @@
+text,label,confidence,source
+"This product exceeded all my expectations — the build quality is outstanding and delivery was fast.",positive,0.97,product-review
+"The battery dies after two hours. Complete waste of money. Would not recommend to anyone.",negative,0.98,product-review
+"It works as described. Nothing particularly special but gets the job done.",neutral,0.85,product-review
+"Absolutely love this! Best purchase I've made this year. Five stars without hesitation.",positive,0.99,product-review
+"Arrived with a cracked screen and customer support was completely unhelpful.",negative,0.96,product-review
+"Decent quality for the price. Some minor scratches out of the box but functional.",neutral,0.78,product-review
+"Incredibly fast shipping and the product looks exactly like the photos. Very happy.",positive,0.94,product-review
+"Instructions are confusing and half the parts were missing. Total disappointment.",negative,0.97,product-review
+"Average product. Does what it says. Not impressed but not disappointed either.",neutral,0.82,product-review
+"Surprisingly good quality at this price point. Already ordered a second one.",positive,0.91,product-review
+"The worst purchase I have ever made. Stopped working after three days.",negative,0.99,product-review
+"It's okay. Meets basic requirements but lacks premium feel.",neutral,0.76,product-review
+"Phenomenal product! My whole family loves it. Worth every penny.",positive,0.98,product-review
+"Packaging was good but the product itself is very flimsy and feels cheap.",negative,0.88,product-review
+"Solid product. Nothing groundbreaking but reliable and well-made.",neutral,0.80,product-review

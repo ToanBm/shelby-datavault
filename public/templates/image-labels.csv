@@ -1,0 +1,16 @@
+filename,label,label_id,confidence,split,width,height,annotator
+img_00001.jpg,cat,0,0.98,train,640,480,annotator_a
+img_00002.jpg,dog,1,0.95,train,1280,720,annotator_b
+img_00003.jpg,bird,2,0.87,validation,640,480,annotator_a
+img_00004.jpg,cat,0,0.99,train,800,600,annotator_c
+img_00005.jpg,horse,3,0.91,train,1920,1080,annotator_b
+img_00006.jpg,dog,1,0.93,test,640,480,annotator_a
+img_00007.jpg,bird,2,0.82,train,640,480,annotator_c
+img_00008.jpg,cat,0,0.96,validation,1280,720,annotator_b
+img_00009.jpg,horse,3,0.88,train,800,600,annotator_a
+img_00010.jpg,dog,1,0.97,train,640,480,annotator_c
+img_00011.jpg,bird,2,0.79,test,1280,720,annotator_b
+img_00012.jpg,cat,0,0.94,train,640,480,annotator_a
+img_00013.jpg,horse,3,0.90,validation,1920,1080,annotator_c
+img_00014.jpg,dog,1,0.92,train,800,600,annotator_b
+img_00015.jpg,bird,2,0.85,train,640,480,annotator_a

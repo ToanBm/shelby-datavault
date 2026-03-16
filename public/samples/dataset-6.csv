@@ -1,0 +1,6 @@
+frame_id,sequence_id,timestamp_ms,num_points,scene_type,weather,time_of_day,car_count,pedestrian_count,cyclist_count,annotation_file
+frame_000001,seq_0042,0,128432,urban_intersection,clear,daytime,3,2,1,annotations/seq_0042_frame_000001.json
+frame_000002,seq_0042,100,127891,urban_intersection,clear,daytime,3,3,1,annotations/seq_0042_frame_000002.json
+frame_000003,seq_0042,200,129104,urban_intersection,clear,daytime,4,2,0,annotations/seq_0042_frame_000003.json
+frame_000001,seq_0087,0,94231,highway_merge,light_rain,daytime,8,0,0,annotations/seq_0087_frame_000001.json
+frame_000002,seq_0087,100,93847,highway_merge,light_rain,daytime,9,0,0,annotations/seq_0087_frame_000002.json
